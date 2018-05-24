@@ -118,7 +118,7 @@ function pitch(remainingRequest, prevRequest, dataInput) {
           return;
         }
         if (stats.mtime.getTime() !== dep.mtime) {
-          console.log("CACHE STALE: state.mtime.getTime() !=== dep.mtime ", dep, state.mtime.getTime(), "!==", dep.mtime);
+          console.log("CACHE STALE: stats.mtime.getTime() !=== dep.mtime ", dep, stats.mtime.getTime(), "!==", dep.mtime);
           eachCallback(true);
           return;
         }
