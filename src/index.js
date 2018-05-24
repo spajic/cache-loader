@@ -53,7 +53,7 @@ function loader(...args) {
         // Don't trust mtime.
         // File was changed while compiling
         // or it could be an inaccurate filesystem.
-        console.log("CACHE STALE: mtime > startTime for", dep);
+        console.log("CACHE STALE: mtime > startTime for", dep, mtime, ">", startTime);
         cache = false;
       }
 
@@ -118,7 +118,7 @@ function pitch(remainingRequest, prevRequest, dataInput) {
           return;
         }
         if (stats.mtime.getTime() !== dep.mtime) {
-          console.log("CACHE STALE: state.mtime.getTime() !=== dep.mtime ", dep);
+          console.log("CACHE STALE: state.mtime.getTime() !=== dep.mtime ", dep, state.mtime.getTime(), "!==", dep.mtime);
           eachCallback(true);
           return;
         }
