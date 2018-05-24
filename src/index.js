@@ -25,6 +25,7 @@ const defaults = {
 };
 
 function loader(...args) {
+  console.log("HELLO FROM SPAJIC CACHE-LOADER FORK!");
   const options = Object.assign({}, defaults, getOptions(this));
 
   validateOptions(schema, options, 'Cache Loader');
